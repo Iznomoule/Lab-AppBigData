@@ -1,0 +1,9 @@
+- name: Run Front
+  docker_container:
+    name: my-front
+    image: iznomoule/front:latest
+    published_ports:
+      - "8082:80"
+    networks:
+      - name: my-network
+    state: started

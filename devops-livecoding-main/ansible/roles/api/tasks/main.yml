@@ -1,0 +1,11 @@
+- name: Run API
+  docker_container:
+    name: my-api
+    image: iznomoule/my_app_image:latest
+    env:
+      DATABASE_URL: postgres://user:password@my-database/dbname
+    networks:
+      - name: my-network
+    published_ports:
+      - "8080:8080"
+    state: started

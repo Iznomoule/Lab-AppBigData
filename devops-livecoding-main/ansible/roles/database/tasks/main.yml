@@ -1,0 +1,10 @@
+- name: Run Database
+  docker_container:
+    name: my-database
+    image: iznomoule/postgres:latest
+    env:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    networks:
+      - name: my-network
+    state: started

@@ -1,0 +1,9 @@
+- name: Run Proxy
+  docker_container:
+    name: my-proxy
+    image: iznomoule/httpd:latest
+    networks:
+      - name: my-network
+    published_ports:
+      - "80:80"
+    state: started
